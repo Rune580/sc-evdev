@@ -259,7 +259,7 @@ fn handle_controller(controller: HidDevice, tx: Sender<DaemonState>) {
 
             let report_id = buf[0];
 
-            if report_id == 66 {
+            if report_id == 69 {
                 let buttons_u32 = u32::from_le_bytes(buf[2..6].try_into().unwrap());
 
                 let buttons = Buttons::from_bits_truncate(buttons_u32);
